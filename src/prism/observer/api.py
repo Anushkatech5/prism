@@ -5,7 +5,6 @@ from prism.tracker.api import TrackerAPI
 from prism.har.api import HumanActivityRecognitionAPI
 from .algorithm import RemainingTimeEstimator
 from .algorithm.policy import InterventionPolicy
-from .algorithm.utils import get_graph, get_raw_cm
 
 class ObserverAPI:
     """
@@ -29,8 +28,7 @@ class ObserverAPI:
         self.tracker_api = TrackerAPI(task_name=task_name, allow_exceptional_transition=allow_exceptional_transition)
 
         # Initialize Remaining Time Estimator
-        graph = get_graph(task_name)
-        self.remaining_time_estimator = RemainingTimeEstimator(graph, mc_samples=1000)
+        self.remaining_time_estimator = RemainingTimeEstimator(self.tracker_api.graph, mc_samples=1000)
 
         # Initialize Intervention Policies
         self.policies = {}
