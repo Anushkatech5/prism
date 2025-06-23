@@ -1,8 +1,8 @@
 import pickle
 import numpy as np
 
-from .tracker_api import TrackerAPI
-from .har_api import HumanActivityRecognitionAPI
+from .api import TrackerAPI
+from .api import HumanActivityRecognitionAPI
 from .algorithm import RemainingTimeEstimator
 from .algorithm.policy import InterventionPolicy
 from .algorithm.utils import get_graph, get_raw_cm
