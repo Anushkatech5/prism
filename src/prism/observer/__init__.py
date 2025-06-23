@@ -1,3 +1,3 @@
 from .api import ObserverAPI
-from .api import TrackerAPI
-from .api import HumanActivityRecognitionAPI
+from prism.tracker.api import TrackerAPI
+from prism.har.api import HumanActivityRecognitionAPI
